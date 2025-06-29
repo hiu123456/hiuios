@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>FullScreen</key>
+			<true/>
+			<key>IsRemovable</key>
+			<true/>
+			<key>Label</key>
+			<string>Hieu☠️</string>
+			<key>PayloadDescription</key>
+			<string>Web Clip mở giao diện tùy chỉnh</string>
+			<key>PayloadDisplayName</key>
+			<string>Hieu☠️ Web Clip</string>
+			<key>PayloadIdentifier</key>
+			<string>com.hieu.webclip</string>
+			<key>PayloadOrganization</key>
+			<string>HiuiOS</string>
+			<key>PayloadType</key>
+			<string>com.apple.webClip.managed</string>
+			<key>PayloadUUID</key>
+			<string>D7B1A23E-ABCD-4C5E-A1F3-1234567890AB</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>Precomposed</key>
+			<false/>
+			<key>URL</key>
+			<string>https://hiu123456.github.io/hiuios/</string>
+		</dict>
+	</array>
+	<key>PayloadDisplayName</key>
+	<string>Hieu☠️ Web Clip</string>
+	<key>PayloadIdentifier</key>
+	<string>com.hieu.profile.webclip.ff</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>FFEEDDCC-BBAA-1122-3344-556677889900</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+</dict>
+</plist>
