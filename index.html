@@ -1,16 +1,117 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HiuiOS</title>
-    <style>
-      body { font-family: sans-serif; text-align: center; padding: 50px; }
-      h1 { color: #007aff; }
-    </style>
-  </head>
-  <body>
-    <h1>Xin chào từ HiuiOS 👋</h1>
-    <p>Đây là trang web để tạo Web Clip trên iPhone.</p>
-  </body>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hieu☠️</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f2f2f7;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      font-size: 18px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      width: 80%;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 18px;
+      border-radius: 12px;
+      border: none;
+      background-color: #007aff;
+      color: white;
+      cursor: pointer;
+    }
+
+    .switch-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .switch {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      max-width: 300px;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    .switch input {
+      transform: scale(1.5);
+    }
+
+    .label-text {
+      min-width: 120px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <h2>🔒 Nhập mật khẩu để tiếp tục</h2>
+  <div id="password-screen">
+    <input type="password" id="password" placeholder="Nhập mật khẩu" />
+    <br />
+    <button onclick="checkPassword()">Xác nhận</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <div id="dashboard" class="hidden">
+    <h2>🔧 Bảng điều khiển</h2>
+    <div class="switch-container">
+      <div class="switch">
+        <span class="label-text" id="label1">off</span>
+        <input type="checkbox" id="switch1" onchange="updateLabel(1, 'ghim đầu')" />
+      </div>
+      <div class="switch">
+        <span class="label-text" id="label2">off</span>
+        <input type="checkbox" id="switch2" onchange="updateLabel(2, 'nhẹ tâm')" />
+      </div>
+      <div class="switch">
+        <span class="label-text" id="label3">off</span>
+        <input type="checkbox" id="switch3" onchange="updateLabel(3, 'đạn thẳng')" />
+      </div>
+    </div>
+    <button onclick="activate()">Kích hoạt</button>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pw = document.getElementById("password").value;
+      if (pw === "Hieu123") {
+        document.getElementById("password-screen").classList.add("hidden");
+        document.getElementById("dashboard").classList.remove("hidden");
+      } else {
+        document.getElementById("error").innerText = "Sai mật khẩu!";
+      }
+    }
+
+    function updateLabel(num, onText) {
+      const checkbox = document.getElementById("switch" + num);
+      const label = document.getElementById("label" + num);
+      label.textContent = checkbox.checked ? onText : "off";
+    }
+
+    function activate() {
+      alert("Đang mở Free Fire...");
+      window.location.href = "freefire://";
+    }
+  </script>
+</body>
 </html>
