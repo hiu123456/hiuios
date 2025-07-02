@@ -5,18 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hieu☠️ Control Panel</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #1a1a1a;
-      color: #eee;
-      display: flex; align-items: center; justify-content: center;
-      height: 100vh; margin: 0;
-      flex-direction: column;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; background: #1a1a1a; color: #eee;
+           display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;
+           flex-direction: column; }
     .hidden { display: none; }
-    input[type=password], button {
-      padding: 12px; font-size: 18px; border: none; border-radius: 10px;
-    }
+    input[type=password], button { padding: 12px; font-size: 18px; border: none; border-radius: 10px; }
     input[type=password] { width: 80%; background: #333; color: #eee; }
     button {
       background: linear-gradient(to right, #330000, #660000);
@@ -92,7 +85,7 @@
     <h2>🔒 Nhập mật khẩu</h2>
     <input type="password" id="password" placeholder="..." /><br/>
     <button onclick="checkPassword()">Xác nhận</button>
-    <p id="error"></p>
+    <p id="error" style="color: crimson;"></p>
   </div>
 
   <div id="dashboard" class="hidden">
@@ -108,7 +101,7 @@
       <input type="range" min="0" max="100" value="50" id="dpiSlider" oninput="updateDpi(this.value)" />
     </div>
 
-    <button onclick="activate()">Kích hoạt</button>
+    <button id="activateBtn" onclick="activate()">Kích hoạt</button>
 
     <div id="status" class="hidden">
       <div class="spinner"></div>
@@ -118,7 +111,7 @@
 
 <script>
 function checkPassword() {
-  const pw = document.getElementById('password').value;
+  const pw = document.getElementById('password').value.trim();
   if (pw === 'Hieu123') {
     document.getElementById('password-screen').classList.add('hidden');
     document.getElementById('dashboard').classList.remove('hidden');
@@ -129,7 +122,7 @@ function checkPassword() {
 
 function updateLabel(n, textOn) {
   const cb = document.querySelectorAll('.switch input')[n-1];
-  document.getElementById('label' + n).innerText = cb.checked ? textOn : 'off';
+  document.getElementById('label'+n).innerText = cb.checked ? textOn : 'off';
 }
 
 function updateDpi(val) {
@@ -137,17 +130,18 @@ function updateDpi(val) {
 }
 
 function activate() {
-  document.querySelector('button').disabled = true;
+  const btn = document.getElementById('activateBtn');
+  btn.disabled = true;
+
   const status = document.getElementById('status');
   const txt = document.getElementById('statusText');
-
   status.classList.remove('hidden');
+
   txt.innerText = 'Đang tải...';
   setTimeout(() => {
     txt.innerText = 'Đang khởi chạy Free Fire...';
     setTimeout(() => {
       window.location.href = 'freefire://';
-      txt.innerText = '...');
     }, 2000);
   }, 2000);
 }
